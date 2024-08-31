@@ -1,11 +1,11 @@
 import {motion} from "framer-motion"
-import {state} from "../hooks/useEngine";
+import {State} from "../hooks/useEngine";
 import {formatPercentage} from "../utils/helpers";
 import React from "react";
 
 interface ResultProps{
     state:State;
-    errors:string;
+    errors:number;
     accuracyPercentage:number;
     total:number;
     className?:string;

@@ -1,6 +1,6 @@
 //except only letters and white spaces
 
-export const isKeyBoardAllowed = (code: string) => {
+export const isKeyboardCodeAllowed = (code: string) => {
     return(
         code.startsWith("Key") ||
         code.startsWith("Digit") ||
