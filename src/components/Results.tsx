@@ -15,9 +15,9 @@ const Results = ({
   total: number;
   className?: string;
 }) => {
-  if (state !== "finish") {
-    return null;
-  }
+//   if (state !== "finish") {
+//     return null;
+//   }
 
   const initial = { opacity: 0 };
   const animate = { opacity: 1 };
