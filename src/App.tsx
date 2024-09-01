@@ -1,6 +1,5 @@
 import React from 'react';
-import './styles/App.css'
-import GenerateWords from "./components/GenerateWords";
+import GeneratedWords from "./components/GenerateWords";
 import RestartButton from "./components/RestartButton";
 import Results from "./components/Results";
 import UserTypings from './components/UserTypings';
@@ -11,32 +10,33 @@ function App() {
 
   return (
     <>
-        <CountdownTimer  timeLeft={timeLeft} />
-        <WordsContainer>
-          <GenerateWords key={words} words={words}/>
-          <UserTypings
-            className="absolute inset-0"
-            words={words}
-            userInput={typed}
-            />
-        </WordsContainer>
-        <RestartButton
-          className="mx-auto mt-10 text-slate-500"
-          onRestart={restart}
+      <CountdownTimer timeLeft={timeLeft} />
+      <WordsContainer>
+        <GeneratedWords key={words} words={words} />
+        {/* User typed characters will be overlayed over the generated words */}
+        <UserTypings
+          className="absolute inset-0"
+          words={words}
+          userInput={typed}
         />
-        <Results
-          className ="mt-10"
-          state={state}
-          errors={errors}
-          accuracyPercentage={calculateAccuracyPercentage(errors,totalTyped)}
-          total={totalTyped}
-          />
+      </WordsContainer>
+      <RestartButton
+        className={"mx-auto mt-10 text-slate-500"}
+        onRestart={restart}
+      />
+      <Results
+        className="mt-10"
+        state={state}
+        errors={errors}
+        accuracyPercentage={calculateAccuracyPercentage(errors, totalTyped)}
+        total={totalTyped}
+      />
     </>
   );
 };
 const WordsContainer = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="relative text-3xl max-w-xl leading-relaxed break-all mt-3">
+    <div className="relative text-3xl max-w-4xl leading-relaxed break-all mt-3">
       {children}
     </div>
   );

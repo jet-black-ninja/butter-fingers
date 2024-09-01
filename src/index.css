@@ -6,6 +6,6 @@
 
 @layer base {
   body {
-    @apply bg-blue-800 text-blue-50 min-h-screen grid place-items-center	px-4 tracking-wider font-mono;
+    @apply bg-gray-800 text-gray-50 min-h-screen grid place-items-center	px-4 tracking-wider font-mono;
   }
 }
